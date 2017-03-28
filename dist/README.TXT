@@ -1,3 +1,6 @@
+*Please note that the database used for this app is not hosted on any server (for now) and only works if you have an appropriate locally
+hosted MySQL database
+
 To run this application, download the StockIt.jar file and double-click to execute it.
 
 To log in as a test client, trader, or manager:
