@@ -1,3 +1,5 @@
+To run this application, download the StockIt.jar file and double-click to execute it.
+
 To log in as a test client, trader, or manager:
 
   usernames: any of user1, user2, ..., userN
