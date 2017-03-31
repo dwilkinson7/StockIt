@@ -1,3 +1,18 @@
+*Please note that the database used for this app is not hosted on any server (for now) and only works if you have an appropriate locally
+hosted MySQL database
+
+To run this application, download the StockIt.jar file and double-click to execute it.
+
+To log in as a test client, trader, or manager:
+
+  usernames: any of user1, user2, ..., userN
+             any of trader1, trader2, ..., traderN
+             any of manager1, manager2, ..., managerN
+
+for all types of users
+
+  password: secret123 
+
 ========================
 BUILD OUTPUT DESCRIPTION
 ========================
