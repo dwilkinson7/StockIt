@@ -840,10 +840,10 @@ public class Manager extends javax.swing.JFrame {
 
     private void transactionBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_transactionBtnActionPerformed
         // TODO add your handling code here:
-        if(listOfTraders.isSelectionEmpty()){
+        if(listOfClients.isSelectionEmpty()){
             JOptionPane.showMessageDialog(getContentPane(), "Please Select a Client", "Transaction Error", JOptionPane.ERROR_MESSAGE);
         }else{
-            String selectedClient = listOfTraders.getSelectedValue();
+            String selectedClient = listOfClients.getSelectedValue();
             String[] array = new String[1];
             array[0] = selectedClient;
             transactionFrame.main(array);
