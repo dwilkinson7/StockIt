@@ -83,6 +83,17 @@ public class Manager extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        AddTraderDialog = new javax.swing.JDialog();
+        addTraderButton = new javax.swing.JButton();
+        cancelButton = new javax.swing.JButton();
+        usernamebox = new javax.swing.JTextField();
+        passwordbox = new javax.swing.JTextField();
+        traderssnbox = new javax.swing.JTextField();
+        sectorbox = new javax.swing.JTextField();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         panel = new javax.swing.JPanel();
         displayBtn = new javax.swing.JButton();
@@ -117,6 +128,97 @@ public class Manager extends javax.swing.JFrame {
         jMenuBar1 = new javax.swing.JMenuBar();
         flieMenuItem = new javax.swing.JMenu();
         logoutItem = new javax.swing.JMenuItem();
+
+        AddTraderDialog.setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        AddTraderDialog.setTitle("Add Trader");
+        AddTraderDialog.setAlwaysOnTop(true);
+        AddTraderDialog.setPreferredSize(new java.awt.Dimension(300, 300));
+        AddTraderDialog.setType(java.awt.Window.Type.POPUP);
+
+        addTraderButton.setText("Add Trader");
+        addTraderButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addTraderButtonActionPerformed(evt);
+            }
+        });
+
+        cancelButton.setText("Cancel");
+        cancelButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cancelButtonActionPerformed(evt);
+            }
+        });
+
+        passwordbox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                passwordboxActionPerformed(evt);
+            }
+        });
+
+        sectorbox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                sectorboxActionPerformed(evt);
+            }
+        });
+
+        jLabel4.setText("Username:");
+
+        jLabel5.setText("Password:");
+
+        jLabel6.setText("Trader SSN:");
+
+        jLabel10.setText("Sector:");
+
+        javax.swing.GroupLayout AddTraderDialogLayout = new javax.swing.GroupLayout(AddTraderDialog.getContentPane());
+        AddTraderDialog.getContentPane().setLayout(AddTraderDialogLayout);
+        AddTraderDialogLayout.setHorizontalGroup(
+            AddTraderDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(AddTraderDialogLayout.createSequentialGroup()
+                .addGap(60, 60, 60)
+                .addGroup(AddTraderDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel4)
+                    .addComponent(jLabel5)
+                    .addComponent(jLabel6)
+                    .addComponent(jLabel10))
+                .addGap(29, 29, 29)
+                .addGroup(AddTraderDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(usernamebox, javax.swing.GroupLayout.DEFAULT_SIZE, 94, Short.MAX_VALUE)
+                    .addComponent(passwordbox)
+                    .addComponent(traderssnbox)
+                    .addComponent(sectorbox))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(AddTraderDialogLayout.createSequentialGroup()
+                .addContainerGap(65, Short.MAX_VALUE)
+                .addComponent(addTraderButton)
+                .addGap(72, 72, 72)
+                .addComponent(cancelButton)
+                .addGap(83, 83, 83))
+        );
+        AddTraderDialogLayout.setVerticalGroup(
+            AddTraderDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, AddTraderDialogLayout.createSequentialGroup()
+                .addContainerGap(50, Short.MAX_VALUE)
+                .addGroup(AddTraderDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(usernamebox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel4))
+                .addGap(18, 18, 18)
+                .addGroup(AddTraderDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(passwordbox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel5))
+                .addGap(18, 18, 18)
+                .addGroup(AddTraderDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(traderssnbox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel6))
+                .addGap(18, 18, 18)
+                .addGroup(AddTraderDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(sectorbox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel10))
+                .addGap(44, 44, 44)
+                .addGroup(AddTraderDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(addTraderButton)
+                    .addComponent(cancelButton))
+                .addGap(49, 49, 49))
+        );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -271,11 +373,7 @@ public class Manager extends javax.swing.JFrame {
         searchStock1.setText("View Performance");
 
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/stockit/rsz_plus-icon.png"))); // NOI18N
-        jButton1.setActionCommand("");
         jButton1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jButton1.setMaximumSize(new java.awt.Dimension(87, 81));
-        jButton1.setMinimumSize(new java.awt.Dimension(87, 81));
-        jButton1.setPreferredSize(new java.awt.Dimension(87, 81));
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 newTraderBtnActionPerformed(evt);
@@ -662,8 +760,57 @@ public class Manager extends javax.swing.JFrame {
     }//GEN-LAST:event_traderPerformanceBtnActionPerformed
 
     private void newTraderBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newTraderBtnActionPerformed
-        // TODO add your handling code here:
+        AddTraderDialog.setVisible(true);
     }//GEN-LAST:event_newTraderBtnActionPerformed
+
+    private void addTraderButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addTraderButtonActionPerformed
+        // TODO add your handling code here:
+        try{
+            
+            DBConnection dbcon = new DBConnection();
+            dbcon.establishConnection();
+            Statement stmt = dbcon.con.createStatement();
+            int compid = 0;
+            int manssn = 0;
+            ResultSet rs = stmt.executeQuery("SELECT ic.Id"
+                    + "                       FROM investment_company as ic"
+                    + "                       WHERE ic.Name = \""+companyName+"\"");
+            while(rs.next()){
+                 compid = rs.getInt("Id");
+            }
+            
+            rs = stmt.executeQuery("SELECT Manager_SSN"
+                    + "                       FROM manager_account"
+                    + "                       WHERE username = \""+username+"\"");
+            while(rs.next()){
+                 manssn = rs.getInt("Manager_SSN");
+            }
+            
+            stmt.executeUpdate("INSERT INTO trader(Sector, Investment_Company_ID, Manager_SSN)"
+                    + "                       VALUES(\""+this.sectorbox.getText()+"\","+compid+","+manssn+")");
+           
+            dbcon.con.close();          
+        }catch(Exception ex){
+            Logger.getLogger(clientLogin.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_addTraderButtonActionPerformed
+
+    private void cancelButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelButtonActionPerformed
+        this.AddTraderDialog.setVisible(false);
+        this.usernamebox.setText("");
+        this.passwordbox.setText("");
+        this.traderssnbox.setText("");
+        this.sectorbox.setText("");
+        
+    }//GEN-LAST:event_cancelButtonActionPerformed
+
+    private void passwordboxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passwordboxActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_passwordboxActionPerformed
+
+    private void sectorboxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sectorboxActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_sectorboxActionPerformed
 
     /**
      * @param args the command line arguments
@@ -704,15 +851,22 @@ public class Manager extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JDialog AddTraderDialog;
+    private javax.swing.JButton addTraderButton;
     private javax.swing.JButton allStockBtn;
+    private javax.swing.JButton cancelButton;
     private javax.swing.JLabel companyText;
     private javax.swing.JLabel companyVariable;
     private javax.swing.JButton displayBtn;
     private javax.swing.JMenu flieMenuItem;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
@@ -725,18 +879,22 @@ public class Manager extends javax.swing.JFrame {
     private javax.swing.JList<String> listOfTraders;
     private javax.swing.JMenuItem logoutItem;
     private javax.swing.JPanel panel;
+    private javax.swing.JTextField passwordbox;
     private javax.swing.JButton performanceBtn;
     private javax.swing.JButton searchClientBtn;
     private javax.swing.JLabel searchStock;
     private javax.swing.JLabel searchStock1;
     private javax.swing.JButton searchTraderBtn;
+    private javax.swing.JTextField sectorbox;
     private javax.swing.JLabel selectedStock;
     private javax.swing.JTable table;
     private javax.swing.JLabel trader;
     private javax.swing.JButton traderPerformanceBtn;
     private javax.swing.JButton traderRefresh;
+    private javax.swing.JTextField traderssnbox;
     private javax.swing.JLabel transaction;
     private javax.swing.JButton transactionBtn;
+    private javax.swing.JTextField usernamebox;
     private javax.swing.JLabel variableStockChange;
     // End of variables declaration//GEN-END:variables
 }

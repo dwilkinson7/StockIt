@@ -160,7 +160,7 @@ public class managerLogin extends javax.swing.JFrame {
                 System.out.println("Password: " + rs.getString("password"));
                 array[0] = rs.getString("username");
             }
-            ResultSet rs1 = stmt.executeQuery("SELECT investment_company.Name FROM investment_company, manager, manager_account WHERE investment_company.Id = manager.Investment_Company_ID AND manager.Manager_SSN = manager_account.Manager_SSN AND manager_account.username = \"" + array[0] + "\"");
+            ResultSet rs1 = stmt.executeQuery("SELECT investment_company.Name FROM investment_company, manager, manager_account WHERE manager_account.username = \"" + array[0] + "\" AND manager.Manager_SSN = manager_account.Manager_SSN AND investment_company.Id = manager.Investment_Company_ID");
             while (rs1.next()) {
                 System.out.println("Company Name: " + rs1.getString("Name"));
                 array[1] = rs1.getString("Name");
