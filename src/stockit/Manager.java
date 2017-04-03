@@ -94,6 +94,21 @@ public class Manager extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
+        AddClientDialog = new javax.swing.JDialog();
+        addTraderButton1 = new javax.swing.JButton();
+        cancelButton1 = new javax.swing.JButton();
+        usernamebox1 = new javax.swing.JTextField();
+        passwordbox1 = new javax.swing.JTextField();
+        clientssnbox = new javax.swing.JTextField();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        namebox = new javax.swing.JTextField();
+        jLabel15 = new javax.swing.JLabel();
+        accounttypebox = new javax.swing.JComboBox<>();
+        jLabel16 = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
+        clientagebox = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         panel = new javax.swing.JPanel();
         displayBtn = new javax.swing.JButton();
@@ -105,8 +120,6 @@ public class Manager extends javax.swing.JFrame {
         trader = new javax.swing.JLabel();
         companyText = new javax.swing.JLabel();
         companyVariable = new javax.swing.JLabel();
-        performanceBtn = new javax.swing.JButton();
-        jLabel7 = new javax.swing.JLabel();
         jScrollPane3 = new javax.swing.JScrollPane();
         listOfTraders = new javax.swing.JList<>();
         jScrollPane4 = new javax.swing.JScrollPane();
@@ -125,13 +138,14 @@ public class Manager extends javax.swing.JFrame {
         searchStock1 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jLabel9 = new javax.swing.JLabel();
+        addClientButton = new javax.swing.JButton();
+        jLabel14 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         flieMenuItem = new javax.swing.JMenu();
         logoutItem = new javax.swing.JMenuItem();
 
         AddTraderDialog.setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         AddTraderDialog.setTitle("Add Trader");
-        AddTraderDialog.setAlwaysOnTop(true);
         AddTraderDialog.setSize(new java.awt.Dimension(300, 300));
         AddTraderDialog.setPreferredSize(new java.awt.Dimension(300, 300));
         AddTraderDialog.setResizable(false);
@@ -222,9 +236,120 @@ public class Manager extends javax.swing.JFrame {
                 .addGap(49, 49, 49))
         );
 
+        AddClientDialog.setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        AddClientDialog.setTitle("Add Client");
+        AddClientDialog.setSize(new java.awt.Dimension(350,450));
+        AddClientDialog.setPreferredSize(new java.awt.Dimension(350, 450));
+        AddClientDialog.setResizable(false);
+        AddClientDialog.setType(java.awt.Window.Type.POPUP);
+
+        addTraderButton1.setText("Add Client");
+        addTraderButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addTraderButton1ActionPerformed(evt);
+            }
+        });
+
+        cancelButton1.setText("Cancel");
+        cancelButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cancelButton1ActionPerformed(evt);
+            }
+        });
+
+        passwordbox1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                passwordbox1ActionPerformed(evt);
+            }
+        });
+
+        jLabel11.setText("Username:");
+
+        jLabel12.setText("Password:");
+
+        jLabel13.setText("Client SSN:");
+
+        namebox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                nameboxActionPerformed(evt);
+            }
+        });
+
+        jLabel15.setText("Client name:");
+
+        accounttypebox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "INVESTMENTS", "SAVINGS", "CHEQUING" }));
+
+        jLabel16.setText("Account Type:");
+
+        jLabel17.setText("Age:");
+
+        javax.swing.GroupLayout AddClientDialogLayout = new javax.swing.GroupLayout(AddClientDialog.getContentPane());
+        AddClientDialog.getContentPane().setLayout(AddClientDialogLayout);
+        AddClientDialogLayout.setHorizontalGroup(
+            AddClientDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(AddClientDialogLayout.createSequentialGroup()
+                .addGap(59, 59, 59)
+                .addGroup(AddClientDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(AddClientDialogLayout.createSequentialGroup()
+                        .addGroup(AddClientDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel17)
+                            .addComponent(jLabel16)
+                            .addComponent(jLabel11)
+                            .addComponent(jLabel12)
+                            .addComponent(jLabel13)
+                            .addComponent(jLabel15))
+                        .addGap(29, 29, 29)
+                        .addGroup(AddClientDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(clientagebox)
+                            .addComponent(usernamebox1, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(passwordbox1, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(clientssnbox, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(namebox, javax.swing.GroupLayout.DEFAULT_SIZE, 94, Short.MAX_VALUE)
+                            .addComponent(accounttypebox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap(48, Short.MAX_VALUE))
+                    .addGroup(AddClientDialogLayout.createSequentialGroup()
+                        .addComponent(addTraderButton1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(cancelButton1)
+                        .addGap(42, 42, 42))))
+        );
+        AddClientDialogLayout.setVerticalGroup(
+            AddClientDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, AddClientDialogLayout.createSequentialGroup()
+                .addGap(29, 29, 29)
+                .addGroup(AddClientDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(namebox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel15))
+                .addGap(18, 18, 18)
+                .addGroup(AddClientDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(usernamebox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel11))
+                .addGap(18, 18, 18)
+                .addGroup(AddClientDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(passwordbox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel12))
+                .addGap(18, 18, 18)
+                .addGroup(AddClientDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(clientssnbox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel13))
+                .addGap(18, 18, 18)
+                .addGroup(AddClientDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(clientagebox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel17))
+                .addGap(18, 18, 18)
+                .addGroup(AddClientDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(accounttypebox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel16))
+                .addGap(67, 67, 67)
+                .addGroup(AddClientDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(addTraderButton1)
+                    .addComponent(cancelButton1))
+                .addContainerGap(71, Short.MAX_VALUE))
+        );
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setText("Trader:");
+        jLabel1.setText("Manager:");
 
         javax.swing.GroupLayout panelLayout = new javax.swing.GroupLayout(panel);
         panel.setLayout(panelLayout);
@@ -269,16 +394,6 @@ public class Manager extends javax.swing.JFrame {
         companyText.setText("Company Name:");
 
         companyVariable.setText(companyName);
-
-        performanceBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/stockit/rsz_refresh.png"))); // NOI18N
-        performanceBtn.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        performanceBtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                performanceBtnActionPerformed(evt);
-            }
-        });
-
-        jLabel7.setText("Refresh");
 
         listOfTraders.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         jScrollPane3.setViewportView(listOfTraders);
@@ -384,6 +499,18 @@ public class Manager extends javax.swing.JFrame {
 
         jLabel9.setText("New Trader");
 
+        addClientButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/stockit/rsz_plus-icon.png"))); // NOI18N
+        addClientButton.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        addClientButton.setMaximumSize(new java.awt.Dimension(82, 81));
+        addClientButton.setMinimumSize(new java.awt.Dimension(82, 81));
+        addClientButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addClientButtonnewTraderBtnActionPerformed(evt);
+            }
+        });
+
+        jLabel14.setText("New Client");
+
         flieMenuItem.setText("File");
 
         logoutItem.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_DELETE, java.awt.event.InputEvent.SHIFT_MASK | java.awt.event.InputEvent.CTRL_MASK));
@@ -417,7 +544,7 @@ public class Manager extends javax.swing.JFrame {
                         .addComponent(companyVariable, javax.swing.GroupLayout.PREFERRED_SIZE, 282, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(12, 12, 12)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -432,12 +559,20 @@ public class Manager extends javax.swing.JFrame {
                                     .addGroup(layout.createSequentialGroup()
                                         .addGap(10, 10, 10)
                                         .addComponent(searchStock1)))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGap(18, 18, 18)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(traderRefresh, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGroup(layout.createSequentialGroup()
-                                        .addGap(21, 21, 21)
-                                        .addComponent(jLabel8))))
+                                        .addGap(10, 10, 10)
+                                        .addComponent(jLabel9)))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(28, 28, 28)
+                                        .addComponent(jLabel14)
+                                        .addGap(13, 13, 13))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(addClientButton, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE))))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -458,17 +593,16 @@ public class Manager extends javax.swing.JFrame {
                                     .addGroup(layout.createSequentialGroup()
                                         .addGap(10, 10, 10)
                                         .addComponent(transaction)))))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(10, 10, 10)
-                                .addComponent(jLabel9))
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(performanceBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addGap(21, 21, 21)
-                                    .addComponent(jLabel7))
-                                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))))
+                                .addGap(219, 219, 219)
+                                .addComponent(jLabel8)
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(traderRefresh, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(64, 64, 64))))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(displayBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -476,7 +610,7 @@ public class Manager extends javax.swing.JFrame {
                         .addComponent(selectedStock)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(variableStockChange, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(0, 85, Short.MAX_VALUE))
+                .addGap(0, 75, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -511,22 +645,22 @@ public class Manager extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(83, 83, 83)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jLabel8)
-                                    .addComponent(jLabel9)))
-                            .addComponent(traderRefresh, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(traderRefresh, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel8))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(traderPerformanceBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(7, 7, 7)
                                 .addComponent(searchStock1))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(addClientButton, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(7, 7, 7)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel9)
+                                    .addComponent(jLabel14)))
                             .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(83, 83, 83)
-                                .addComponent(jLabel7))
-                            .addComponent(performanceBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(searchClientBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -717,15 +851,6 @@ public class Manager extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_transactionBtnActionPerformed
 
-    private void performanceBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_performanceBtnActionPerformed
-        // TODO add your handling code here:
-        String[] array = new String[2];
-        array[0] = username;
-        array[1] = companyName;
-        dispose();
-        Manager.main(array);
-    }//GEN-LAST:event_performanceBtnActionPerformed
-
     private void searchTraderBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchTraderBtnActionPerformed
         // TODO add your handling code here:
         String selectedTrader = listOfTraders.getSelectedValue();
@@ -755,6 +880,11 @@ public class Manager extends javax.swing.JFrame {
 
     private void traderRefreshActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_traderRefreshActionPerformed
         // TODO add your handling code here:
+        String[] array = new String[2];
+        array[0] = username;
+        array[1] = companyName;
+        dispose();
+        Manager.main(array);
     }//GEN-LAST:event_traderRefreshActionPerformed
 
     private void traderPerformanceBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_traderPerformanceBtnActionPerformed
@@ -774,6 +904,7 @@ public class Manager extends javax.swing.JFrame {
             Statement stmt = dbcon.con.createStatement();
             int compid = 0;
             int manssn = 0;
+            boolean allgood = true;
             ResultSet rs = stmt.executeQuery("SELECT ic.Id"
                     + "                       FROM investment_company as ic"
                     + "                       WHERE ic.Name = \""+companyName+"\"");
@@ -788,6 +919,21 @@ public class Manager extends javax.swing.JFrame {
                  manssn = rs.getInt("Manager_SSN");
             }
             
+            if (this.usernamebox.getText().isEmpty() || this.passwordbox.getText().isEmpty() || this.traderssnbox.getText().isEmpty() || this.sectorbox.getText().isEmpty())
+            {
+                allgood = false;
+                JOptionPane.showMessageDialog(getContentPane(), "Please complete all fields.", "Empty Field Error", JOptionPane.ERROR_MESSAGE);
+            }
+            
+            if (allgood && this.traderssnbox.getText().length()!=9)
+            {
+                this.traderssnbox.setText("");
+                allgood = false;
+                JOptionPane.showMessageDialog(getContentPane(), "SSN must be 9 digits.", "SSN Error", JOptionPane.ERROR_MESSAGE);
+            }
+            
+            if (allgood)
+            {
             stmt.executeUpdate("INSERT INTO trader(Trader_SSN, Sector, Investment_Company_ID, Manager_SSN)"
                     + "                       VALUES("+Integer.parseInt(this.traderssnbox.getText())+", \""+this.sectorbox.getText()+"\","+compid+","+manssn+")");
            
@@ -796,8 +942,20 @@ public class Manager extends javax.swing.JFrame {
             
             stmt.executeUpdate("INSERT INTO trader_account(Trader_SSN, username, password)"
                     + "                       VALUES("+Integer.parseInt(this.traderssnbox.getText())+", \""+this.usernamebox.getText()+"\","+" \""+this.passwordbox.getText()+"\")");
+            
+            this.AddTraderDialog.setVisible(false);
+            this.usernamebox.setText("");
+            this.passwordbox.setText("");
+            this.traderssnbox.setText("");
+            this.sectorbox.setText("");
+            }
             dbcon.con.close();          
-        }catch(Exception ex){
+        }catch (NumberFormatException nfe)
+        {
+                JOptionPane.showMessageDialog(getContentPane(), "SSN must be valid number.", "Number Error", JOptionPane.ERROR_MESSAGE);
+        }
+        
+        catch(Exception ex){
             Logger.getLogger(clientLogin.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_addTraderButtonActionPerformed
@@ -808,7 +966,6 @@ public class Manager extends javax.swing.JFrame {
         this.passwordbox.setText("");
         this.traderssnbox.setText("");
         this.sectorbox.setText("");
-        
     }//GEN-LAST:event_cancelButtonActionPerformed
 
     private void passwordboxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passwordboxActionPerformed
@@ -818,6 +975,94 @@ public class Manager extends javax.swing.JFrame {
     private void sectorboxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sectorboxActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_sectorboxActionPerformed
+
+    private void addTraderButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addTraderButton1ActionPerformed
+        // TODO add your handling code here:
+        try{
+            
+            DBConnection dbcon = new DBConnection();
+            dbcon.establishConnection();
+            Statement stmt = dbcon.con.createStatement();
+            int traderssn = 0;
+            boolean allgood = true;
+            String traderusername = this.listOfTraders.getSelectedValue();
+            ResultSet rs = stmt.executeQuery("SELECT ta.Trader_SSN"
+                    + "                       FROM trader_account as ta"
+                    + "                       WHERE ta.username = \""+traderusername+"\"");
+            while(rs.next()){
+                 traderssn = rs.getInt("Trader_SSN");
+            }
+            if (this.usernamebox1.getText().isEmpty() || this.passwordbox1.getText().isEmpty() || this.clientssnbox.getText().isEmpty() || this.namebox.getText().isEmpty() || this.clientagebox.getText().isEmpty())
+            {
+                allgood = false;
+                JOptionPane.showMessageDialog(getContentPane(), "Please complete all fields.", "Empty Field Error", JOptionPane.ERROR_MESSAGE);
+            }
+            
+
+            int age = Integer.parseInt(this.clientagebox.getText());
+            if (allgood && age < 18)
+            {
+                this.clientagebox.setText("");
+                allgood = false;
+                JOptionPane.showMessageDialog(getContentPane(), "Age must be 18 or older.", "Age Error", JOptionPane.ERROR_MESSAGE);
+            }
+            if (allgood && this.clientssnbox.getText().length()!=9)
+            {
+                this.clientssnbox.setText("");
+                allgood = false;
+                JOptionPane.showMessageDialog(getContentPane(), "SSN must be 9 digits.", "SSN Error", JOptionPane.ERROR_MESSAGE);
+            }
+                
+            if (allgood) {
+            stmt.executeUpdate("INSERT INTO client(Client_SSN, Name, Age)"
+                    + "                       VALUES("+Integer.parseInt(this.clientssnbox.getText())+", \""+this.namebox.getText()+"\", "+Integer.parseInt(this.clientagebox.getText())+")");
+           
+            stmt.executeUpdate("INSERT INTO account(Client_SSN, Account_Type, username, password, Trader_SSN)"
+                    + "                       VALUES("+Integer.parseInt(this.clientssnbox.getText())+", \""+this.accounttypebox.getSelectedItem()+"\", \""+this.usernamebox1.getText()+"\", \""+this.passwordbox1.getText()+"\", "+traderssn+")");
+           
+            
+            
+            
+            
+            this.AddClientDialog.setVisible(false);
+            this.usernamebox1.setText("");
+            this.passwordbox1.setText("");
+            this.namebox.setText("");
+            this.clientssnbox.setText("");
+            this.clientagebox.setText("");
+            
+            }
+            dbcon.con.close();          
+        }catch (NumberFormatException nfe)
+        {
+                JOptionPane.showMessageDialog(getContentPane(), "Age/SSN must be valid number.", "Number Error", JOptionPane.ERROR_MESSAGE);
+        }
+        catch(Exception ex){
+            Logger.getLogger(clientLogin.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_addTraderButton1ActionPerformed
+
+    private void cancelButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelButton1ActionPerformed
+        // TODO add your handling code here:
+        this.AddClientDialog.setVisible(false);
+            this.usernamebox.setText("");
+            this.passwordbox.setText("");
+            this.traderssnbox.setText("");
+            this.sectorbox.setText("");
+    }//GEN-LAST:event_cancelButton1ActionPerformed
+
+    private void passwordbox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passwordbox1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_passwordbox1ActionPerformed
+
+    private void nameboxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nameboxActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_nameboxActionPerformed
+
+    private void addClientButtonnewTraderBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addClientButtonnewTraderBtnActionPerformed
+        // TODO add your handling code here:
+        AddClientDialog.setVisible(true);
+    }//GEN-LAST:event_addClientButtonnewTraderBtnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -858,10 +1103,17 @@ public class Manager extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JDialog AddClientDialog;
     private javax.swing.JDialog AddTraderDialog;
+    private javax.swing.JComboBox<String> accounttypebox;
+    private javax.swing.JButton addClientButton;
     private javax.swing.JButton addTraderButton;
+    private javax.swing.JButton addTraderButton1;
     private javax.swing.JButton allStockBtn;
     private javax.swing.JButton cancelButton;
+    private javax.swing.JButton cancelButton1;
+    private javax.swing.JTextField clientagebox;
+    private javax.swing.JTextField clientssnbox;
     private javax.swing.JLabel companyText;
     private javax.swing.JLabel companyVariable;
     private javax.swing.JButton displayBtn;
@@ -869,12 +1121,18 @@ public class Manager extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JMenuBar jMenuBar1;
@@ -885,9 +1143,10 @@ public class Manager extends javax.swing.JFrame {
     private javax.swing.JList<String> listOfClients;
     private javax.swing.JList<String> listOfTraders;
     private javax.swing.JMenuItem logoutItem;
+    private javax.swing.JTextField namebox;
     private javax.swing.JPanel panel;
     private javax.swing.JTextField passwordbox;
-    private javax.swing.JButton performanceBtn;
+    private javax.swing.JTextField passwordbox1;
     private javax.swing.JButton searchClientBtn;
     private javax.swing.JLabel searchStock;
     private javax.swing.JLabel searchStock1;
@@ -902,6 +1161,7 @@ public class Manager extends javax.swing.JFrame {
     private javax.swing.JLabel transaction;
     private javax.swing.JButton transactionBtn;
     private javax.swing.JTextField usernamebox;
+    private javax.swing.JTextField usernamebox1;
     private javax.swing.JLabel variableStockChange;
     // End of variables declaration//GEN-END:variables
 }
