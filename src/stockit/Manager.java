@@ -132,7 +132,9 @@ public class Manager extends javax.swing.JFrame {
         AddTraderDialog.setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         AddTraderDialog.setTitle("Add Trader");
         AddTraderDialog.setAlwaysOnTop(true);
+        AddTraderDialog.setSize(new java.awt.Dimension(300, 300));
         AddTraderDialog.setPreferredSize(new java.awt.Dimension(300, 300));
+        AddTraderDialog.setResizable(false);
         AddTraderDialog.setType(java.awt.Window.Type.POPUP);
 
         addTraderButton.setText("Add Trader");
@@ -188,7 +190,7 @@ public class Manager extends javax.swing.JFrame {
                     .addComponent(sectorbox))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(AddTraderDialogLayout.createSequentialGroup()
-                .addContainerGap(65, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(addTraderButton)
                 .addGap(72, 72, 72)
                 .addComponent(cancelButton)
@@ -786,9 +788,14 @@ public class Manager extends javax.swing.JFrame {
                  manssn = rs.getInt("Manager_SSN");
             }
             
-            stmt.executeUpdate("INSERT INTO trader(Sector, Investment_Company_ID, Manager_SSN)"
-                    + "                       VALUES(\""+this.sectorbox.getText()+"\","+compid+","+manssn+")");
+            stmt.executeUpdate("INSERT INTO trader(Trader_SSN, Sector, Investment_Company_ID, Manager_SSN)"
+                    + "                       VALUES("+Integer.parseInt(this.traderssnbox.getText())+", \""+this.sectorbox.getText()+"\","+compid+","+manssn+")");
            
+            stmt.executeUpdate("INSERT INTO trader_sector(Trader_SSN, Sector)"
+                    + "                       VALUES("+Integer.parseInt(this.traderssnbox.getText())+", \""+this.sectorbox.getText()+"\")");
+            
+            stmt.executeUpdate("INSERT INTO trader_account(Trader_SSN, username, password)"
+                    + "                       VALUES("+Integer.parseInt(this.traderssnbox.getText())+", \""+this.usernamebox.getText()+"\","+" \""+this.passwordbox.getText()+"\")");
             dbcon.con.close();          
         }catch(Exception ex){
             Logger.getLogger(clientLogin.class.getName()).log(Level.SEVERE, null, ex);
