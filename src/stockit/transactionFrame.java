@@ -53,7 +53,7 @@ public class transactionFrame extends javax.swing.JFrame {
                             while(rs.next()){
                                 accountID = rs.getInt("Account_ID");
                             }        
-                           stmt.executeUpdate("INSERT INTO has_positions (Account_ID, Stock_ID, Qty) VALUES("+accountID+",'"+stockName+"', 19) ON DUPLICATE KEY UPDATE\n" +
+                           stmt.executeUpdate("INSERT INTO has_positions (Account_ID, Stock_ID, Qty) VALUES("+accountID+",'"+stockName+"', 1) ON DUPLICATE KEY UPDATE\n" +
                                 "Stock_ID='"+stockName+"', QTY= QTY + 1");
                            stmt.executeUpdate("UPDATE stock_daily_performance SET Volume = Volume - 1 WHERE stock_daily_performance.StockID = '"+stockName+"'");
                             dbcon.con.close();
@@ -66,6 +66,7 @@ public class transactionFrame extends javax.swing.JFrame {
                     setupTable2();
                     setupTable();
                     sellProgress.setEnabled(true);
+                    buyProgress.setValue(0);
                     setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
                     
                 }else{
@@ -104,8 +105,9 @@ public class transactionFrame extends javax.swing.JFrame {
                         }
                     }
                     Buy.setEnabled(true);
-                    //table.setEnabled(true);
+                    table.setEnabled(true);
                     buyProgress.setEnabled(true);
+                    sellProgress.setValue(0);
                     setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
                     setupTable2();
                     setupTable();

@@ -114,7 +114,7 @@ public class allStocks extends javax.swing.JFrame {
         table.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         jScrollPane2.setViewportView(table);
 
-        goBackBtn.setIcon(new javax.swing.ImageIcon("C:\\Users\\ahmed\\Desktop\\Database Proj\\Icons\\rsz_undo.png")); // NOI18N
+        goBackBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/stockit/rsz_undo.png"))); // NOI18N
         goBackBtn.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         goBackBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
