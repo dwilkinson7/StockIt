@@ -488,7 +488,7 @@ public class ClientAccountInfo extends javax.swing.JFrame {
             dbcon.establishConnection();
             Statement stmt = dbcon.con.createStatement();
             String container = ClientFrame.getAccountId();
-            ResultSet rs = stmt.executeQuery("select password from account where account.Account_ID = 1");
+            ResultSet rs = stmt.executeQuery("select password from account where account.Account_ID = " + ClientFrame.getAccountId());
             while (rs.next()) {
                 dummyPwd = rs.getString("password");
                 System.out.println(dummyPwd);
